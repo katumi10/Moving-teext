@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:cursive;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #343f34;
+}
+
+.wrapper{
+    display: inline-flex;
+}
+
+.wrapper .static-txt{
+       font-size: 60px;
+       color: #fff;
+       font-weight: 400;
+}
+
+.dynamic-txt li{
+    color: chartreuse;
+    list-style: none;
+    position: relative;
+    top: 0;
+    font-size: 60px;
+    animation: slide 6s steps(4) infinite;
+    font-weight: 500;
+}
+@keyframes slide{
+   100%{
+    top: -360px;
+   }
+}
+
+
+.wrapper .dynamic-txt{
+    line-height: 90px;
+    height: 90px;
+    overflow: hidden;
+    margin-left: 15px;
+}
+
+.dynamic-txt li span::after{
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  background: #343f34;
+  animation: typing 1.5s steps(10) infinite;
+  border-left: 2px solid chartreuse;
+}
+
+.dynamic-txt li span{
+    position: relative;
+}
+
+@keyframes typing {
+    100%{
+        left: 100%;
+        margin: 0 -35px 0 35px;
+
+    }
+}
